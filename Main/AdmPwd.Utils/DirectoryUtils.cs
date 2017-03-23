@@ -298,7 +298,7 @@ namespace AdmPwd.Utils
             {
                 ForestInfo di = GetForestRootDomain();
                 SearchRequest rq = new SearchRequest();
-                string searchString = string.Format(System.Globalization.CultureInfo.InvariantCulture, "(&(objectClass=computer)(cn={0}))", computerName);
+                string searchString = string.Format(System.Globalization.CultureInfo.InvariantCulture, "(&(objectClass=computer)(sAMAccountName={0}$))", computerName);
                 rq = new SearchRequest();
                 rq.Filter=searchString;
                 rq.Scope=SearchScope.Subtree;
